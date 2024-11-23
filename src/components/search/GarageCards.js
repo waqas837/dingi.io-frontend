@@ -8,8 +8,8 @@ const StarRating = ({ rating, reviewCount }) => {
   const hasHalfStar = rating % 1 !== 0;
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-      <div style={{ display: "flex", gap: "2px" }}>
+    <div className="flex items-center gap-1">
+      <div className="flex gap-1">
         {[...Array(fullStars)].map((_, index) => (
           <Star key={index} size={18} fill="#FFD700" color="#FFD700" />
         ))}
@@ -18,15 +18,7 @@ const StarRating = ({ rating, reviewCount }) => {
           <Star key={`empty-${index}`} size={18} color="#D1D5DB" />
         ))}
       </div>
-      <span
-        style={{
-          color: "#6B7280",
-          fontSize: "14px",
-          marginLeft: "4px",
-        }}
-      >
-        ({reviewCount})
-      </span>
+      <span className="text-sm text-gray-500 ml-2">({reviewCount})</span>
     </div>
   );
 };
@@ -57,103 +49,34 @@ const GaragesCards = () => {
       reviewCount: 90,
       image: "/g2.jpg",
     },
+    // Add more garages as needed
   ];
 
-  const containerStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "24px",
-    justifyContent: "center",
-    padding: "24px",
-  };
-
-  const cardStyle = {
-    width: "350px",
-    backgroundColor: "#ffffff",
-    borderRadius: "8px",
-    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-    overflow: "hidden",
-    transition: "all 0.3s ease",
-  };
-
-  const imageStyle = {
-    width: "100%",
-    height: "180px",
-    objectFit: "cover",
-  };
-
-  const cardContentStyle = {
-    padding: "16px",
-  };
-
-  const titleStyle = {
-    fontSize: "18px",
-    fontWeight: "600",
-    color: "#1f2937",
-    marginBottom: "8px",
-  };
-
-  const servicesContainerStyle = {
-    fontSize: "14px",
-    color: "#4b5563",
-    marginBottom: "12px",
-  };
-
-  const servicesTitleStyle = {
-    fontWeight: "500",
-    marginBottom: "4px",
-  };
-
-  const servicesListStyle = {
-    listStyleType: "disc",
-    paddingLeft: "20px",
-    lineHeight: "1.4",
-  };
-
-  const reviewStyle = {
-    marginBottom: "12px",
-  };
-
-  const buttonStyle = {
-    width: "100%",
-    backgroundColor: "#2563eb",
-    color: "#ffffff",
-    padding: "8px 16px",
-    border: "none",
-    borderRadius: "6px",
-    cursor: "pointer",
-    fontSize: "14px",
-    fontWeight: "500",
-    transition: "background-color 0.2s ease",
-  };
-
   return (
-    <div style={containerStyle}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
       {garages.map((garage) => (
         <div
           key={garage.id}
-          style={cardStyle}
-          onMouseOver={(e) => {
-            e.currentTarget.style.transform = "translateY(-4px)";
-            e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.15)";
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.1)";
-          }}
+          className="w-full bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
-          <img src={garage.image} alt={garage.name} style={imageStyle} />
-          <div style={cardContentStyle}>
-            <h3 style={titleStyle}>{garage.name}</h3>
-            <div style={servicesContainerStyle}>
-              <p style={servicesTitleStyle}>Main Services:</p>
-              <ul style={servicesListStyle}>
+          <img
+            src={garage.image}
+            alt={garage.name}
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              {garage.name}
+            </h3>
+            <div className="text-sm text-gray-600 mb-4">
+              <p className="font-medium mb-1">Main Services:</p>
+              <ul className="list-disc pl-5">
                 {garage.services.map((service, index) => (
                   <li key={index}>{service}</li>
                 ))}
               </ul>
             </div>
-            <div style={reviewStyle}>
+            <div className="mb-4">
               <StarRating
                 rating={garage.rating}
                 reviewCount={garage.reviewCount}
@@ -161,13 +84,7 @@ const GaragesCards = () => {
             </div>
             <Link
               href={"/garage-profile"}
-              style={buttonStyle}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = "#1d4ed8";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = "#2563eb";
-              }}
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-center font-medium transition-colors duration-200 hover:bg-blue-700"
             >
               View Details
             </Link>

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import { apiUrl } from "../../../lib/api";
@@ -19,7 +18,7 @@ export default function AdminLogin() {
   }, [router]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault();
 
     try {
       const response = await fetch(`${apiUrl}/api/admin/login`, {
@@ -33,18 +32,13 @@ export default function AdminLogin() {
       const data = await response.json();
 
       if (response.ok) {
-        // Store token in localStorage with expiration
         const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000; // 2 hours
         localStorage.setItem("adminToken", data.token);
         localStorage.setItem("tokenExpiration", expirationTime);
 
-        // Show success toast
         toast.success("Login successful!");
-
-        // Redirect to admin dashboard
         router.push("/dashboard");
       } else {
-        // Handle errors
         setError(data.message || "Login failed. Please try again.");
         toast.error(data.message || "Login failed. Please try again.");
       }
@@ -55,57 +49,57 @@ export default function AdminLogin() {
   };
 
   return (
-    <section className="login-section layout-radius">
+    <section className="flex justify-center items-center h-screen bg-gray-100">
       <Toaster />
-      <div className="inner-container">
-        <div className="right-box">
-          <div className="form-sec">
-            <h2 className="admin-title">Admin Login</h2>
-            <div className="form-box">
-              <form onSubmit={handleSubmit}>
-                <div className="form_boxes">
-                  <label>Email</label>
-                  <input
-                    required
-                    type="text"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="form_boxes">
-                  <label>Password</label>
-                  <input
-                    required
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <div className="btn-box">
-                  <label className="contain">
-                    Remember
-                    <input type="checkbox" defaultChecked="checked" />
-                    <span className="checkmark" />
-                  </label>
-                </div>
-                <div className="form-submit">
-                  <button type="submit" className="theme-btn">
-                    Admin Login{" "}
-                    <Image
-                      alt=""
-                      src="/images/arrow.svg"
-                      width={14}
-                      height={14}
-                    />
-                  </button>
-                </div>
-                {error && <p className="error-message">{error}</p>}
-              </form>
-            </div>
+      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-center mb-6">Admin Login</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
+            <input
+              required
+              type="text"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border rounded-lg text-sm focus:ring focus:ring-indigo-300 focus:outline-none"
+            />
           </div>
-        </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Password
+            </label>
+            <input
+              required
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-3 py-2 border rounded-lg text-sm focus:ring focus:ring-indigo-300 focus:outline-none"
+            />
+          </div>
+          <div className="flex items-center">
+            <label className="flex items-center text-sm text-gray-700">
+              <input
+                type="checkbox"
+                defaultChecked="checked"
+                className="mr-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500"
+              />
+              Remember
+            </label>
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="w-full py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition"
+            >
+              Admin Login{" "}
+            </button>
+          </div>
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </form>
       </div>
     </section>
   );
