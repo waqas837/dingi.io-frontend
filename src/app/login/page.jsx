@@ -10,9 +10,9 @@ export const metadata = {
 export default function LoginPage() {
   return (
     <>
-      <Header1 headerClass="boxcar-header header-style-v1 style-two inner-header cus-style-1" />
+      <Header1 />
       <Login />
-      <Footer1 parentClass="boxcar-footer footer-style-one v1 cus-st-1" />
+      <Footer1 />
     </>
   );
 }

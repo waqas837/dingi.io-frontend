@@ -1,15 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Plus, Pencil, Trash2 } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 import { apiUrl } from "../../../../../lib/api";
 
 const API_URL = `${apiUrl}/api/guidevideos`;
 
-export default function VideoGuideHowToFix() {
+export default function VideosUsingGPSTracker() {
   const [videos, setVideos] = useState([]);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [videoFile, setVideoFile] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMode, setModalMode] = useState("create");
+  const [formData, setFormData] = useState({
+    id: null,
+    title: "",
+    description: "",
+    videoFile: null,
+  });
 
   useEffect(() => {
     fetchVideos();
@@ -27,40 +33,65 @@ export default function VideoGuideHowToFix() {
     }
   };
 
-  const handleUpload = async (e) => {
+  const handleOpenModal = (mode = "create", video = null) => {
+    setModalMode(mode);
+    if (mode === "edit" && video) {
+      setFormData({
+        id: video.id,
+        title: video.title,
+        description: video.description,
+        videoFile: null,
+      });
+    } else {
+      setFormData({
+        id: null,
+        title: "",
+        description: "",
+        videoFile: null,
+      });
+    }
+    setIsModalOpen(true);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!videoFile) {
+    if (modalMode === "create" && !formData.videoFile) {
       toast.error("Please select a video file");
       return;
     }
+    const formDataToSend = new FormData();
+    formDataToSend.append("title", formData.title);
+    formDataToSend.append("description", formData.description);
+    if (formData.videoFile) {
+      formDataToSend.append("files", formData.videoFile);
+    }
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("files", videoFile);
     const token = localStorage.getItem("adminToken");
+    const url =
+      modalMode === "edit" ? `${API_URL}/${formData.id}` : `${API_URL}/upload`;
+
     try {
-      const res = await fetch(`${API_URL}/upload`, {
-        method: "POST",
+      const res = await fetch(url, {
+        method: modalMode === "edit" ? "PUT" : "POST",
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        body: formData,
+        body: formDataToSend,
       });
 
-      if (!res.ok) throw new Error("Failed to upload video");
-      toast.success("Video uploaded successfully!");
-      setTitle("");
-      setDescription("");
-      setVideoFile(null);
+      if (!res.ok) throw new Error(`Failed to ${modalMode} video`);
+      toast.success(`Video ${modalMode}d successfully!`);
+      setIsModalOpen(false);
       fetchVideos();
     } catch (error) {
-      toast.error("Failed to upload video");
+      toast.error(`Failed to ${modalMode} video`);
       console.error(error);
     }
   };
 
   const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this video?")) return;
+
     try {
       const token = localStorage.getItem("adminToken");
       const res = await fetch(`${API_URL}/${id}`, {
@@ -80,127 +111,146 @@ export default function VideoGuideHowToFix() {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
+    <div className="p-6 max-w-6xl mx-auto">
       <Toaster />
-      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
-        Video Guide Using GPS Tracker
-      </h1>
-      <form onSubmit={handleUpload} style={{ marginBottom: "40px" }}>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Title</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            style={styles.input}
-            placeholder="Enter video title"
-            required
-          />
-        </div>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Description</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            style={styles.textArea}
-            placeholder="Enter video description"
-            required
-          />
-        </div>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Upload Video</label>
-          <input
-            type="file"
-            accept="video/*"
-            onChange={(e) => setVideoFile(e.target.files[0])}
-            style={styles.input}
-            required
-          />
-        </div>
-        <button type="submit" style={styles.saveButton}>
-          Upload Video
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Video Guide Using GPS Tracker</h1>
+        <button
+          onClick={() => handleOpenModal("create")}
+          className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+        >
+          <Plus size={20} />
+          Add Video
         </button>
-      </form>
+      </div>
 
-      <h2 style={{ marginBottom: "20px" }}>Uploaded Videos</h2>
-      {videos.map((video) => (
-        <div key={video.id} style={styles.videoCard}>
-          <h3>{video.title}</h3>
-          <p>{video.description}</p>
-          <video
-            src={`${apiUrl}/${video.video_path}`}
-            controls
-            style={{ width: "100%", borderRadius: "6px" }}
-          ></video>
-          <button
-            onClick={() => handleDelete(video.id)}
-            style={styles.deleteButton}
-          >
-            Delete Video
-          </button>
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse bg-white rounded-lg shadow">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-600">
+                Title
+              </th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-600">
+                Description
+              </th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-600">
+                Video
+              </th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-600">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {videos.map((video) => (
+              <tr key={video.id} className="hover:bg-gray-50">
+                <td className="px-6 py-4 text-sm">{video.title}</td>
+                <td className="px-6 py-4 text-sm">{video.description}</td>
+                <td className="px-6 py-4">
+                  <video
+                    src={`${apiUrl}/${video.video_path}`}
+                    controls
+                    className="w-48 rounded"
+                  />
+                </td>
+                <td className="px-6 py-4">
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => handleOpenModal("edit", video)}
+                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-full"
+                    >
+                      <Pencil size={18} />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(video.id)}
+                      className="p-2 text-red-600 hover:bg-red-50 rounded-full"
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white rounded-lg p-6 w-full max-w-2xl">
+            <h2 className="text-xl font-bold mb-4">
+              {modalMode === "create"
+                ? "Add New GPS Tracker Video"
+                : "Edit GPS Tracker Video"}
+            </h2>
+
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  value={formData.title}
+                  onChange={(e) =>
+                    setFormData({ ...formData, title: e.target.value })
+                  }
+                  className="w-full p-2 border rounded-lg"
+                  placeholder="Enter video title"
+                  required
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Description
+                </label>
+                <textarea
+                  value={formData.description}
+                  onChange={(e) =>
+                    setFormData({ ...formData, description: e.target.value })
+                  }
+                  className="w-full p-2 border rounded-lg min-h-24"
+                  placeholder="Enter video description"
+                  required
+                />
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Video File
+                </label>
+                <input
+                  type="file"
+                  accept="video/*"
+                  onChange={(e) =>
+                    setFormData({ ...formData, videoFile: e.target.files[0] })
+                  }
+                  className="w-full p-2 border rounded-lg"
+                  required={modalMode === "create"}
+                />
+              </div>
+
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 border rounded-lg hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                >
+                  {modalMode === "create" ? "Upload" : "Update"}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      ))}
+      )}
     </div>
   );
 }
-const styles = {
-  formGroup: {
-    marginBottom: "20px",
-  },
-  label: {
-    fontSize: "14px",
-    fontWeight: "600",
-    color: "#555",
-    marginBottom: "8px",
-    display: "block",
-  },
-  input: {
-    width: "100%",
-    padding: "12px",
-    border: "1px solid #ddd",
-    borderRadius: "6px",
-    fontSize: "14px",
-    color: "#333",
-    boxSizing: "border-box",
-    transition: "border-color 0.3s",
-  },
-  textArea: {
-    width: "100%",
-    padding: "12px",
-    border: "1px solid #ddd",
-    borderRadius: "6px",
-    fontSize: "14px",
-    color: "#333",
-    boxSizing: "border-box",
-    transition: "border-color 0.3s",
-    minHeight: "100px",
-  },
-  saveButton: {
-    padding: "12px 18px",
-    backgroundColor: "#4a90e2",
-    color: "#fff",
-    border: "none",
-    borderRadius: "6px",
-    cursor: "pointer",
-    fontSize: "16px",
-    fontWeight: "600",
-    width: "100%",
-    transition: "background-color 0.3s",
-  },
-  videoCard: {
-    marginBottom: "20px",
-    padding: "15px",
-    border: "1px solid #ddd",
-    borderRadius: "6px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  },
-  deleteButton: {
-    marginTop: "10px",
-    padding: "8px 16px",
-    backgroundColor: "#e74c3c",
-    color: "#fff",
-    border: "none",
-    borderRadius: "6px",
-    cursor: "pointer",
-  },
-};

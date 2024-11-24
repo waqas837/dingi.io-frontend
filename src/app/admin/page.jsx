@@ -10,10 +10,17 @@ export const metadata = {
 
 export default function AdminPage() {
   return (
-    <>
-      <Header1 headerClass="boxcar-header header-style-v1 style-two inner-header cus-style-1" />
-      <AdminLogin />
-      <Footer1 parentClass="boxcar-footer footer-style-one v1 cus-st-1" />
-    </>
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <Header1 />
+
+      {/* Admin Login Section */}
+      <main className="flex-grow">
+        <AdminLogin />
+      </main>
+
+      {/* Footer */}
+      <Footer1 />
+    </div>
   );
 }
