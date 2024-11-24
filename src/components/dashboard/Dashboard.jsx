@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import {
   BookOpen,
   Video,
-   Phone,
+  Phone,
   Navigation,
   ChevronDown,
   ChevronRight,
@@ -99,8 +99,8 @@ const GuideAdmin = () => {
           padding: "20px",
           overflowY: "auto",
           display: isMobile && !isOpen ? "none" : "block",
-          height: "150vh",
         }}
+        className="h-screen"
       >
         <div
           style={{
@@ -110,7 +110,7 @@ const GuideAdmin = () => {
             textAlign: "center",
           }}
         >
-          BOXCARS
+          Dingi Dashboard
         </div>
         <nav>
           {menuItems.map((item, index) => (

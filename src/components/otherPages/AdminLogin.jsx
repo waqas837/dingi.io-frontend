@@ -19,7 +19,6 @@ export default function AdminLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch(`${apiUrl}/api/admin/login`, {
         method: "POST",

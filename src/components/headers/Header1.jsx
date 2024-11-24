@@ -29,7 +29,7 @@ export default function Header1() {
             <Image
               alt="Boxcar Logo"
               title="Boxcar"
-              src="/images/logo2.svg"
+              src="/logo.jpg"
               width="108"
               height="26"
             />
