@@ -1,15 +1,20 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
+// Import Geist Sans font
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  variable: "--font-geist-sans", // Use a clear and unique CSS variable for the font
+  weight: "100 900", // Range of weights available for the font
+  display: "swap", // Ensures text is visible during font loading
 });
+
+// Import Geist Mono font
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+  display: "swap",
 });
 
 export const metadata = {
@@ -20,6 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>{/* Metadata and other head elements can go here */}</head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
