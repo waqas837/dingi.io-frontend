@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DontWait = () => {
   return (
-    <div className="p-6 py-5 bg-white">
+    <div className="p-6 py-10 bg-white">
       {/* Header */}
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-5xl font-bold text-blue-900">
