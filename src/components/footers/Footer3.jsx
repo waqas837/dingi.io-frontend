@@ -10,15 +10,15 @@ import Link from "next/link";
 import React from "react";
 
 export default function Footer3({
-  parenttClass = "boxcar-footer footer-style-five",
+  parenttClass = "Dingi-footer footer-style-five",
 }) {
   return (
     <footer className={parenttClass}>
       <div className="footer-top">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="right-box">
             <div className="top-left wow fadeInUp">
-              <h6 className="title">Join BoxCar</h6>
+              <h6 className="title">Join Dingi</h6>
               <div className="text">
                 Receive pricing updates, shopping tips &amp; more!
               </div>
@@ -51,7 +51,7 @@ export default function Footer3({
         </div>
       </div>
       <div className="widgets-section">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="row">
             {/* Footer COlumn */}
             <div className="footer-column-two col-lg-9 col-md-6 col-sm-12">
@@ -155,10 +155,10 @@ export default function Footer3({
       </div>
       {/*  Footer Bottom */}
       <div className="footer-bottom">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="inner-container">
             <div className="copyright-text wow fadeInUp">
-              © <a href="#">2024 Boxcars.com. All rights reserved.</a>
+              © <a href="#">2024 Dingis.com. All rights reserved.</a>
             </div>
             <ul className="footer-nav wow fadeInUp" data-wow-delay="100ms">
               <li>

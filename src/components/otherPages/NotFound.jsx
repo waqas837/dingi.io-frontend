@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="error-section layout-radius">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         <div className="right-box">
           <div className="image-box">
             <Image

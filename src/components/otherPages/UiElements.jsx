@@ -24,7 +24,7 @@ export default function UiElements() {
   };
   return (
     <div className="element-section layout-radius">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         <ul className="breadcrumb">
           <li>
             <a className="item active" href="index.html" />

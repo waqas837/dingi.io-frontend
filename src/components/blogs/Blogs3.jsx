@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Blogs3() {
   return (
     <section className="blog-section-four v1 layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title wow fadeInUp">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>

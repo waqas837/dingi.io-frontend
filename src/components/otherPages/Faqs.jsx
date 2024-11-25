@@ -8,7 +8,7 @@ export default function Faqs() {
         {/* FAQ Column */}
         <div className="faq-column wow fadeInUp" data-wow-delay="400ms">
           <div className="inner-column">
-            <div className="boxcar-title text-center">
+            <div className="Dingi-title text-center">
               <h2 className="title">See Frequently Asked Questions</h2>
             </div>
             <ul className="widget-accordion wow fadeInUp">

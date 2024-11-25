@@ -8,10 +8,9 @@ const GarageProfile = () => {
   const [userLocation, setUserLocation] = useState(null);
 
   const destination = {
-    latitude: 30.0564,
-    longitude: 70.6346,
+    latitude: 35.8617,
+    longitude: 104.1954,
   };
-
   // Fetch current location using the Geolocation API
   useEffect(() => {
     if (navigator.geolocation) {
@@ -129,14 +128,13 @@ const GarageProfile = () => {
             textAlign: "center",
             marginBottom: "40px",
             fontSize: "32px",
-            color: "white",
           }}
         >
           Garage Profile
         </h2>
 
         <div style={headerStyle}>
-          <img src="/g1.jpg" alt="Garage" style={imageStyle} />
+          <img src="/1.jpg" alt="Garage" style={imageStyle} />
           <div style={detailsStyle}>
             <h3 style={titleStyle}>Luxury Auto Garage</h3>
 

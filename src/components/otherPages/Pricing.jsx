@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Pricing() {
   return (
-    <section className="boxcar-pricing-section-seven layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title text-center">
+    <section className="Dingi-pricing-section-seven layout-radius">
+      <div className="Dingi-container">
+        <div className="Dingi-title text-center">
           <h2>Membership Plans</h2>
         </div>
         <div className="row">

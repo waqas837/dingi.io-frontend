@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function TeamSingle({ teamMember }) {
   return (
     <section className="vehicles-section-three layout-radius">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         <div className="right-box">
-          <div className="boxcar-title wow fadeInUp">
+          <div className="Dingi-title wow fadeInUp">
             <ul className="breadcrumb">
               <li>
                 <Link href={`/`}>Home</Link>
@@ -84,7 +84,7 @@ export default function TeamSingle({ teamMember }) {
                             />
                           </svg>
                         </span>
-                        ali@boxcars.com
+                        ali@Dingis.com
                       </a>
                     </li>
                     <li>

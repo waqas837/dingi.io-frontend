@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <section className="contact-us-section layout-radius">
-      <div className="boxcar-container">
-        {/* boxcar-title */}
-        <div className="boxcar-title-three wow fadeInUp">
+      <div className="Dingi-container">
+        {/* Dingi-title */}
+        <div className="Dingi-title-three wow fadeInUp">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>
@@ -34,7 +34,7 @@ export default function Contact() {
               {/* content-column */}
               <div className="col-lg-6 content-column">
                 <div className="inner-column">
-                  <div className="boxcar-title">
+                  <div className="Dingi-title">
                     <h2>Get In Touch</h2>
                     <p>
                       Etiam pharetra egestas interdum blandit viverra morbi
@@ -115,7 +115,7 @@ export default function Contact() {
               {/* contact-column */}
               <div className="contact-column col-lg-6 col-md-12 col-sm-12">
                 <div className="inner-column">
-                  <div className="boxcar-title">
+                  <div className="Dingi-title">
                     <h6 className="title">Contact details</h6>
                     <div className="text">
                       Etiam pharetra egestas interdum blandit viverra morbi
@@ -179,7 +179,7 @@ export default function Contact() {
                       </span>
                       Email
                     </h6>
-                    <div className="text">ali@boxcars.com</div>
+                    <div className="text">ali@Dingis.com</div>
                   </div>
                   <div className="content-box">
                     <h6 className="title">
@@ -244,7 +244,7 @@ export default function Contact() {
         {/* End calculater-section */}
         {/* office-section */}
         <div className="ofice-section">
-          <div className="boxcar-title">
+          <div className="Dingi-title">
             <h2>Our Offices</h2>
           </div>
           <div className="row">

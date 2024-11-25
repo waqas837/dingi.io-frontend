@@ -117,8 +117,8 @@ export default function Invoice() {
           </div>
           <div className="footer">
             <ul className="box-contact">
-              <li>www.boxcar.com</li>
-              <li>invoice@boxcar.com</li>
+              <li>www.Dingi.com</li>
+              <li>invoice@Dingi.com</li>
               <li>(123) 123-456</li>
             </ul>
           </div>

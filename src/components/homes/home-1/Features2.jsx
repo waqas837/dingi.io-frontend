@@ -3,8 +3,8 @@ import React from "react";
 export default function Features2() {
   return (
     <section className="why-choose-us-section">
-      <div className="boxcar-container">
-        <div className="boxcar-title wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title wow fadeInUp">
           <h2 className="title">Why Choose Us?</h2>
         </div>
         <div className="row">

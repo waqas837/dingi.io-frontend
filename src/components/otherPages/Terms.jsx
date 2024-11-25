@@ -4,8 +4,8 @@ import React from "react";
 export default function Terms() {
   return (
     <section className="tabs-section layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title-three">
+      <div className="Dingi-container">
+        <div className="Dingi-title-three">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>
@@ -119,7 +119,7 @@ export default function Terms() {
                   </div>
                   {/* content-box */}
                   <div className="content-box">
-                    <h6 className="title">2. Your Use of the Boxcar Sites</h6>
+                    <h6 className="title">2. Your Use of the Dingi Sites</h6>
                     <div className="text v2">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Risus nascetur morbi nisl, mi, in semper metus porttitor
@@ -218,7 +218,7 @@ export default function Terms() {
                   </div>
                   {/* content-box */}
                   <div className="content-box">
-                    <h6 className="title">2. Your Use of the Boxcar Sites</h6>
+                    <h6 className="title">2. Your Use of the Dingi Sites</h6>
                     <div className="text v2">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Risus nascetur morbi nisl, mi, in semper metus porttitor
@@ -318,7 +318,7 @@ export default function Terms() {
                   </div>
                   {/* content-box */}
                   <div className="content-box">
-                    <h6 className="title">2. Your Use of the Boxcar Sites</h6>
+                    <h6 className="title">2. Your Use of the Dingi Sites</h6>
                     <div className="text v2">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Risus nascetur morbi nisl, mi, in semper metus porttitor
@@ -417,7 +417,7 @@ export default function Terms() {
                   </div>
                   {/* content-box */}
                   <div className="content-box">
-                    <h6 className="title">2. Your Use of the Boxcar Sites</h6>
+                    <h6 className="title">2. Your Use of the Dingi Sites</h6>
                     <div className="text v2">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Risus nascetur morbi nisl, mi, in semper metus porttitor

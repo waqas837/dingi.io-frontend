@@ -11,12 +11,12 @@ import {
 import Link from "next/link";
 export default function Footer2() {
   return (
-    <footer className="boxcar-footer footer-style-four">
+    <footer className="Dingi-footer footer-style-four">
       <div className="footer-top">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="right-box">
             <div className="top-left wow fadeInUp" data-wow-delay="100ms">
-              <h6 className="title">BoxCars</h6>
+              <h6 className="title">Dingis</h6>
               <div className="text">
                 Excepteur sint occaecat cupidatat non proident, sunt
                 <br />
@@ -51,13 +51,13 @@ export default function Footer2() {
                       fill="white"
                     />
                   </svg>
-                  ali@boxcars.com
+                  ali@Dingis.com
                 </a>
               </div>
             </div>
             <div className="top-right wow fadeInUp" data-wow-delay="100ms">
               <div className="content-box">
-                <h6 className="title">Join BoxCar</h6>
+                <h6 className="title">Join Dingi</h6>
                 <div className="text">
                   Receive pricing updates, shopping tips &amp; more!
                 </div>
@@ -91,7 +91,7 @@ export default function Footer2() {
         </div>
       </div>
       <div className="widgets-section">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="row">
             {/* Footer COlumn */}
             <div className="footer-column-two col-lg-9 col-md-12 col-sm-12">
@@ -211,10 +211,10 @@ export default function Footer2() {
       </div>
       {/*  Footer Bottom */}
       <div className="footer-bottom">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="inner-container">
             <div className="copyright-text wow fadeInUp">
-              © <a href="#">2024 Boxcars.com. All rights reserved.</a>
+              © <a href="#">2024 Dingis.com. All rights reserved.</a>
             </div>
             <ul className="footer-nav wow fadeInUp" data-wow-delay="200ms">
               <li>

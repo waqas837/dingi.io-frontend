@@ -20,8 +20,8 @@ export default function DealerSingle({ dealerItem }) {
   return (
     <section className="dealer-ship-section-two layout-radius">
       <div className="barnd-box">
-        <div className="boxcar-container">
-          <div className="boxcar-title-three">
+        <div className="Dingi-container">
+          <div className="Dingi-title-three">
             <ul className="breadcrumb">
               <li>
                 <Link href={`/`}>Home</Link>
@@ -97,7 +97,7 @@ export default function DealerSingle({ dealerItem }) {
                             />
                           </svg>
                         </span>
-                        ali@boxcars.com
+                        ali@Dingis.com
                       </li>
                       <li>
                         {/* <i className="fa-solid fa-phone"></i> */}

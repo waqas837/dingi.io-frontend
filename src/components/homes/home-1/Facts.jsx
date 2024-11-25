@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Facts() {
   return (
-    <section className="boxcar-fun-fact-section">
+    <section className="Dingi-fun-fact-section">
       <div className="large-container">
         <div className="fact-counter">
           <div className="row">

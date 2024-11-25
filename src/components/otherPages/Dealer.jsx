@@ -6,8 +6,8 @@ import Pagination from "../common/Pagination";
 export default function Dealer() {
   return (
     <section className="dealer-ship-section layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title-three wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title-three wow fadeInUp">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>

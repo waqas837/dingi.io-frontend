@@ -6,8 +6,8 @@ import { blogPosts6 } from "@/data/blogs";
 export default function BlogsSingle({ blogItem }) {
   return (
     <section className="blog-section-five layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title wow fadeInUp">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>
@@ -579,8 +579,8 @@ export default function BlogsSingle({ blogItem }) {
       </div>
       {/* blog section */}
       <div className="blog-section">
-        <div className="boxcar-container">
-          <div className="boxcar-title wow fadeInUp">
+        <div className="Dingi-container">
+          <div className="Dingi-title wow fadeInUp">
             <h2>Latest Blog Posts</h2>
           </div>
           <div className="row">

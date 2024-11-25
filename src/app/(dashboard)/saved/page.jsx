@@ -6,8 +6,8 @@ import Footer1 from "../../../components/footers/Footer1";
 import HeaderDashboard from "../../../components/headers/HeaderDashboard";
 
 export const metadata = {
-  title: "Saved || Boxcar - React Nextjs Car Template",
-  description: "Boxcar - React Nextjs Car Template",
+  title: "Saved || Dingi - React Nextjs Car Template",
+  description: "Dingi - React Nextjs Car Template",
 };
 export default function SavedPage() {
   return (
@@ -16,7 +16,7 @@ export default function SavedPage() {
         <HeaderDashboard />
 
         <Saved />
-        <Footer1 parentClass="boxcar-footer footer-style-one v2" />
+        <Footer1 parentClass="Dingi-footer footer-style-one v2" />
       </div>
     </>
   );

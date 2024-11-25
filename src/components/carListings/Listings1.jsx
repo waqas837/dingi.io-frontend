@@ -7,8 +7,8 @@ import Pagination from "../common/Pagination";
 export default function Listings1() {
   return (
     <section className="cars-section-four v1 layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title-three wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title-three wow fadeInUp">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>

@@ -94,8 +94,8 @@ export default function Single5() {
   return (
     <>
       <section className="inventory-section pb-0 layout-radius">
-        <div className="boxcar-container">
-          <div className="boxcar-title-three">
+        <div className="Dingi-container">
+          <div className="Dingi-title-three">
             <ul className="breadcrumb">
               <li>
                 <Link href={`/`}>Home</Link>
@@ -195,8 +195,8 @@ export default function Single5() {
             </div>{" "}
           </Gallery>
         </div>
-        <div className="boxcar-container">
-          <div className="boxcar-title-three">
+        <div className="Dingi-container">
+          <div className="Dingi-title-three">
             <h2>Volvo XC90</h2>
             <div className="text">
               2.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate

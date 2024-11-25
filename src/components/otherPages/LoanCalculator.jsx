@@ -4,7 +4,7 @@ import React from "react";
 export default function LoanCalculator() {
   return (
     <section className="contact-us-section v2 layout-radius">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         {/* calculater-section */}
         <div className="calculater-sec">
           <div className="right-box">
@@ -12,7 +12,7 @@ export default function LoanCalculator() {
               {/* content-column */}
               <div className="col-lg-7 content-column">
                 <div className="inner-column">
-                  <div className="boxcar-title">
+                  <div className="Dingi-title">
                     <h2>Get In Touch</h2>
                     <p>
                       Use our loan calculator to calculate payments over the

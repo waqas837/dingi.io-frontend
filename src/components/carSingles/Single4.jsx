@@ -71,8 +71,8 @@ export default function Single4() {
   return (
     <>
       <section className="inventory-section v1 pb-0 layout-radius">
-        <div className="boxcar-container">
-          <div className="boxcar-title-three">
+        <div className="Dingi-container">
+          <div className="Dingi-title-three">
             <ul className="breadcrumb">
               <li>
                 <Link href={`/`}>Home</Link>
