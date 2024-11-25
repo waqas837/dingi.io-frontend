@@ -5,7 +5,7 @@ import SelectComponent from "../common/SelectComponent";
 export default function DropdownFilter() {
   return (
     <section className="inventory-pager style-1">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         <form onSubmit={(e) => e.preventDefault()} className="inventory-form">
           <div className="form_boxes line-r">
             <SelectComponent options={["Used Cars", "Audi", "Honda"]} />

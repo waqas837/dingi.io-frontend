@@ -38,9 +38,9 @@ export default function Testimonials() {
     ],
   };
   return (
-    <section className="boxcar-testimonial-section home1">
-      <div className="boxcar-container">
-        <div className="boxcar-title wow fadeInUp">
+    <section className="Dingi-testimonial-section home1">
+      <div className="Dingi-container">
+        <div className="Dingi-title wow fadeInUp">
           <h2>What our customers say</h2>
           <div className="text">
             Rated 4.7 / 5 based on 28,370 reviews Showing our 4 &amp; 5 star

@@ -6,8 +6,8 @@ import Hero from "../../components/homes/home-1/Hero";
  
 
 export const metadata = {
-  title: "Home 1 || Boxcar - React Nextjs Car Template",
-  description: "Boxcar - React Nextjs Car Template",
+  title: "Home 1 || Dingi - React Nextjs Car Template",
+  description: "Dingi - React Nextjs Car Template",
 };
 export default function CarServiceLocator() {
   return (

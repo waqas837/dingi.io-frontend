@@ -7,7 +7,7 @@ export default function Features() {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <section className="boxcar-pricing-section pb-0 pt-0">
+      <section className="Dingi-pricing-section pb-0 pt-0">
         <div className="large-container">
           <div className="row g-0">
             {/* image-column */}
@@ -37,7 +37,7 @@ export default function Features() {
             </div>
             <div className="content-column col-lg-6 col-md-12 col-sm-12">
               <div className="inner-column">
-                <div className="boxcar-title wow fadeInUp">
+                <div className="Dingi-title wow fadeInUp">
                   <h2>Get A Fair Price For Your Car Sell To Us Today</h2>
                   <div className="text">
                     We are committed to providing our customers with exceptional

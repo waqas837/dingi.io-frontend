@@ -4,8 +4,8 @@ import AdminLogin from "../../components/otherPages/AdminLogin";
 import Footer1 from "../../components/footers/Footer1";
 
 export const metadata = {
-  title: "Admin Login || Boxcar - React Nextjs Car Template",
-  description: "Boxcar - React Nextjs Car Template",
+  title: "Admin Login || Dingi - React Nextjs Car Template",
+  description: "Dingi - React Nextjs Car Template",
 };
 
 export default function AdminPage() {

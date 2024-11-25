@@ -3,9 +3,9 @@ import Image from "next/image";
 import { carBrands4 } from "@/data/brands";
 export default function Brands() {
   return (
-    <div className="boxcar-brand-section">
-      <div className="boxcar-container">
-        <div className="boxcar-title">
+    <div className="Dingi-brand-section">
+      <div className="Dingi-container">
+        <div className="Dingi-title">
           <h2 className="wow fadeInUp">Explore Our Premium Brands</h2>
           <a href="#" className="btn-title">
             Show All Brands

@@ -31,7 +31,7 @@ const GaragesCards = () => {
       services: ["Engine Repair", "Oil Change", "Brake Service"],
       rating: 4.5,
       reviewCount: 120,
-      image: "/g1.jpg",
+      image: "/1.jpg",
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const GaragesCards = () => {
       services: ["Tire Replacement", "Battery Service", "Alignment"],
       rating: 5,
       reviewCount: 250,
-      image: "/g2.jpg",
+      image: "/2.jpg",
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ const GaragesCards = () => {
       services: ["Full Inspection", "Car Wash", "Detailing"],
       rating: 4,
       reviewCount: 90,
-      image: "/g2.jpg",
+      image: "/2.jpg",
     },
     // Add more garages as needed
   ];

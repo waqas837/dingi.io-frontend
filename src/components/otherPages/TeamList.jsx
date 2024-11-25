@@ -5,9 +5,9 @@ import { teamMembers4 } from "@/data/team";
 import Pagination from "../common/Pagination";
 export default function TeamList() {
   return (
-    <section className="boxcar-team-section v1 layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title">
+    <section className="Dingi-team-section v1 layout-radius">
+      <div className="Dingi-container">
+        <div className="Dingi-title">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>

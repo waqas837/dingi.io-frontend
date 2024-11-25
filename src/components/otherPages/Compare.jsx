@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Compare() {
   return (
     <section className="compare-section layout-radius">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         <div className="right-box">
-          <div className="boxcar-title-three wow fadeInUp">
+          <div className="Dingi-title-three wow fadeInUp">
             <ul className="breadcrumb">
               <li>
                 <Link href={`/`}>Home</Link>

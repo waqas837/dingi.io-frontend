@@ -5,9 +5,9 @@ import React from "react";
 export default function Features3() {
   return (
     <section className="cars-section">
-      <div className="boxcar-container">
-        <div className="boxcar-title wow fadeInUp">
-          <h2>Shop BoxCar Your Way</h2>
+      <div className="Dingi-container">
+        <div className="Dingi-title wow fadeInUp">
+          <h2>Shop Dingi Your Way</h2>
           <Link href={`/inventory-list-01`} className="btn-title">
             View More
             <svg

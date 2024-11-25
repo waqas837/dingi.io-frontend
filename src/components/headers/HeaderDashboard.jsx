@@ -31,7 +31,7 @@ export default function HeaderDashboard() {
   }, [isSearchActive]);
 
   return (
-    <header className="boxcar-header header-style-ten">
+    <header className="Dingi-header header-style-ten">
       <div className="header-inner">
         <div className="inner-container">
           <div className="c-box">
@@ -39,8 +39,8 @@ export default function HeaderDashboard() {
               <div className="logo">
                 <Link href="/">
                   <Image
-                    alt="Boxcar logo"
-                    title="Boxcar"
+                    alt="Dingi logo"
+                    title="Dingi"
                     width={108}
                     height={26}
                     src="/images/logo.svg"

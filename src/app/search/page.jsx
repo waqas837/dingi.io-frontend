@@ -1,27 +1,19 @@
 "use client";
 
-import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
-import { MapPin, Search, Loader2 } from "lucide-react";
+import { Suspense, useState, useEffect } from "react";
+import { MapPin, Loader2 } from "lucide-react";
 import GaragesCards from "../../components/search/GarageCards";
 import Footer1 from "../../components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 
 const SearchResults = () => {
-  const searchParams = useSearchParams();
   const [results, setResults] = useState([]);
   const [currentLocation, setCurrentLocation] = useState(null);
   const [currentPlace, setCurrentPlace] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const location = searchParams.get("location");
-  const service = searchParams.get("service");
-  const vehicle = searchParams.get("vehicle");
-  const model = searchParams.get("model");
-  const brand = searchParams.get("brand");
-
   useEffect(() => {
+    // Fetch the user's current location and place name
     let options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -52,6 +44,7 @@ const SearchResults = () => {
   }, []);
 
   useEffect(() => {
+    // Fetch results and directly show sample data
     const fetchResults = async () => {
       setIsLoading(true);
       const sampleData = [
@@ -71,23 +64,12 @@ const SearchResults = () => {
         },
       ];
 
-      const filteredResults = sampleData.filter((item) => {
-        return (
-          (!location ||
-            item.location.toLowerCase() === location.toLowerCase()) &&
-          (!service || item.service.toLowerCase() === service.toLowerCase()) &&
-          (!vehicle || item.vehicle.toLowerCase() === vehicle.toLowerCase()) &&
-          (!model || model !== "any model") &&
-          (!brand || brand !== "any brand")
-        );
-      });
-
-      setResults(filteredResults);
+      setResults(sampleData);
       setIsLoading(false);
     };
 
     fetchResults();
-  }, [location, service, vehicle, model, brand]);
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,25 +79,6 @@ const SearchResults = () => {
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Search Results
           </h1>
-
-          {/* Active Filters */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {location && (
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">
-                📍 {location}
-              </span>
-            )}
-            {service && (
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">
-                🔧 {service}
-              </span>
-            )}
-            {vehicle && (
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">
-                🚗 {vehicle}
-              </span>
-            )}
-          </div>
 
           {/* Location Information */}
           {currentPlace && (
@@ -136,11 +99,8 @@ const SearchResults = () => {
             <>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">
-                  Found {results.length} matches
+                  Found  matches
                 </h2>
-                <div className="text-sm text-gray-500">
-                  Showing all {results.length} results
-                </div>
               </div>
               <div className="grid gap-6">
                 <GaragesCards />
@@ -148,13 +108,9 @@ const SearchResults = () => {
             </>
           ) : (
             <div className="text-center py-12">
-              <Search className="w-12 h-12 text-gray-400 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">
                 No results found
               </h3>
-              <p className="text-gray-500">
-                Try adjusting your search criteria or browse all services
-              </p>
             </div>
           )}
         </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Cta() {
   return (
     <section className="blog-section-two pt-0 section-radius-bottom bg-white">
-      <div className="boxcar-container">
+      <div className="Dingi-container">
         <div className="row">
           {/* blog-blockt-two */}
           <div className="blog-blockt-two col-lg-6 col-md-6 col-sm-12">

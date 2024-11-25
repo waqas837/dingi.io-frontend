@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function RelatedCars() {
   return (
     <section className="cars-section-three">
-      <div className="boxcar-container">
-        <div className="boxcar-title wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title wow fadeInUp">
           <h2>Related Listings</h2>
           <a href="#" className="btn-title">
             View All

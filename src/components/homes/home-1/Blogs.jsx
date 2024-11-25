@@ -34,7 +34,7 @@ export default async function Blogs() {
                 key={index}
               >
                 <div>
-                  <Link href={`/blog-single/${post.id}`}>
+                  <Link href={`/blog-details/${post.id}`}>
                     <img
                       alt={post.title}
                       src={`${apiUrl}/${post.image}`}

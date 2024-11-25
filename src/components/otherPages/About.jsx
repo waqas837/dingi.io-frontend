@@ -5,10 +5,10 @@ export default function About() {
   return (
     <>
       <div className="upper-box">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="row wow fadeInUp">
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <div className="boxcar-title">
+              <div className="Dingi-title">
                 <ul className="breadcrumb">
                   <li>
                     <Link href={`/`}>Home</Link>
@@ -50,7 +50,7 @@ export default function About() {
       </div>
       {/* gallery-sec */}
       <div className="galler-section">
-        <div className="boxcar-container">
+        <div className="Dingi-container">
           <div className="row">
             <div className="exp-block col-md-2 col-sm-12">
               <div className="inner-box">

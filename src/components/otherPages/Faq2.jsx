@@ -10,7 +10,7 @@ export default function Faq2() {
           {/* FAQ Column */}
           <div className="faq-column wow fadeInUp" data-wow-delay="400ms">
             <div className="inner-column">
-              <div className="boxcar-title text-center">
+              <div className="Dingi-title text-center">
                 <h2 className="title">General</h2>
               </div>
               <ul className="widget-accordion wow fadeInUp">
@@ -28,7 +28,7 @@ export default function Faq2() {
           {/* FAQ Column */}
           <div className="faq-column wow fadeInUp" data-wow-delay="400ms">
             <div className="inner-column">
-              <div className="boxcar-title text-center">
+              <div className="Dingi-title text-center">
                 <h2 className="title">Payments</h2>
               </div>
               <ul className="widget-accordion wow fadeInUp">

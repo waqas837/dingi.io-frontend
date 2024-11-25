@@ -24,8 +24,8 @@ export default function Listings5() {
   };
   return (
     <section className="cars-section-thirteen layout-radius">
-      <div className="boxcar-container">
-        <div className="boxcar-title-three wow fadeInUp">
+      <div className="Dingi-container">
+        <div className="Dingi-title-three wow fadeInUp">
           <ul className="breadcrumb">
             <li>
               <Link href={`/`}>Home</Link>
@@ -35,7 +35,7 @@ export default function Listings5() {
             </li>
           </ul>
           <h2>
-            What Kind of Car Should I Get? Try Boxcars Car Finder to Find a Car
+            What Kind of Car Should I Get? Try Dingis Car Finder to Find a Car
           </h2>
           <ul className="service-list">
             {filters.map((filter, index) => (
